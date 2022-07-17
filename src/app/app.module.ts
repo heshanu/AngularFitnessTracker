@@ -18,6 +18,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 
 import { SignupComponent } from './comp/auth/signup/signup.component';
 import { LoginComponent } from './comp/auth/login/login.component';
@@ -61,6 +62,7 @@ import { NavigationComponent } from './shared/navigation/navigation.component';
     MatCheckboxModule,
     MatSidenavModule,
     MatToolbarModule,
+    MatListModule,
   ],
   providers: [MatDatepickerModule, MatNativeDateModule],
   bootstrap: [AppComponent],
