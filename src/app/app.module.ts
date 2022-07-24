@@ -29,7 +29,8 @@ import { PastTraningComponent } from './comp/traning/past-traning/past-traning.c
 import { WelcomeComponent } from './comp/welcome/welcome.component';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { NavigationComponent } from './shared/navigation/navigation.component';
-//import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
+import { HeaderComponent } from './shared/navigation/header/header.component';
+import { SidenavComponent } from './shared/navigation/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,8 @@ import { NavigationComponent } from './shared/navigation/navigation.component';
     PastTraningComponent,
     WelcomeComponent,
     NavigationComponent,
+    HeaderComponent,
+    SidenavComponent
   ],
 
   imports: [
