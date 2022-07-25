@@ -21,6 +21,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { SignupComponent } from './comp/auth/signup/signup.component';
 import { LoginComponent } from './comp/auth/login/login.component';
@@ -33,6 +34,7 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 import { HeaderComponent } from './shared/navigation/header/header.component';
 import { SidenavComponent } from './shared/navigation/sidenav/sidenav.component';
+import { StopTraningCompoent } from './comp/traning/stop-traning.compoent';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { SidenavComponent } from './shared/navigation/sidenav/sidenav.component'
     NavigationComponent,
     HeaderComponent,
     SidenavComponent,
+    StopTraningCompoent
   ],
 
   imports: [
@@ -71,9 +74,11 @@ import { SidenavComponent } from './shared/navigation/sidenav/sidenav.component'
     MatTabsModule,
     MatCardModule,
     MatSelectModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
   providers: [MatDatepickerModule, MatNativeDateModule],
   bootstrap: [AppComponent],
+  entryComponents:[StopTraningCompoent]
 })
 export class AppModule {}
