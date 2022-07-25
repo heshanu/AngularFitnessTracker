@@ -36,7 +36,8 @@ export class SignupComponent implements OnInit {
     this.studentForm = this.formBuilder.group({
       email: [''],
       password: [''],
-      bdate: [''],
+      bdate: ['']
+      //confirm:['']
       // email: [
       //   '',
       //   [Validators.required, Validators.pattern('[A-Za-z]{4,15}$')],

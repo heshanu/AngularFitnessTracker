@@ -19,6 +19,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
 
 import { SignupComponent } from './comp/auth/signup/signup.component';
 import { LoginComponent } from './comp/auth/login/login.component';
@@ -44,7 +46,7 @@ import { SidenavComponent } from './shared/navigation/sidenav/sidenav.component'
     WelcomeComponent,
     NavigationComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
   ],
 
   imports: [
@@ -66,6 +68,10 @@ import { SidenavComponent } from './shared/navigation/sidenav/sidenav.component'
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatProgressSpinnerModule
   ],
   providers: [MatDatepickerModule, MatNativeDateModule],
   bootstrap: [AppComponent],

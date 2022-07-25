@@ -1,4 +1,4 @@
-<div class="example-container">
+<div class="example-container" fxFlex.xs="100%" fxFlex="400px">
   <h1>SignUp</h1>
   <br />
   <form
@@ -72,13 +72,14 @@
       </mat-form-field>
     </p>
 
+     <!--
     <mat-form-field>
       <mat-checkbox name="confirm" formControlName="confirm" ngModel
         >Agree to terms and condition</mat-checkbox
       >
     </mat-form-field>
-<br>
-    <!--
+    <br />
+
       <label for="">Password</label>
       <input
         placeholder="Placeholder"
@@ -87,7 +88,7 @@
         formControlName="password"
 
       /> -->
-    <button mat-raised-button type="submit" color="info">Submit</button>
+    <button mat-raised-button type="submit" color="primary">Submit</button>
     <button mat-raised-button type="reset" color="warn">Clear</button>
     <br />
   </form>

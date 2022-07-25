@@ -1,1 +1,16 @@
-<p>current-traning works!</p>
+<section
+  class="current-traning"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+  <h1>U Already Started</h1>
+  <mat-spinner mode="determinate" [value]="progress"></mat-spinner>
+  <h1>{{progress}}%</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti id
+    consectetur iste autem quisquam cupiditate voluptatem ipsam minima velit
+    debitis, possimus delectus expedita molestiae, quam blanditiis aut illum
+    officiis fugit?
+  </p>
+  <button mat-raised-button color="accent">Stop</button>
+</section>

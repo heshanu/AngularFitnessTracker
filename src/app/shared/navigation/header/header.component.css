@@ -1,9 +1,16 @@
-a{
+a {
   text-decoration: none;
-  color:white;
+  color: black;
+  margin-left: 5px;
 }
 
-a:hover,a:active{
-  color:lightgray;
+a:hover,
+a:active {
+  color: red;
 }
+
+.navigation-items{
+  margin-left:1100px
+}
+
 
