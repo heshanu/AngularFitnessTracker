@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { StopTraningCompoent } from '../stop-traning.compoent';
+import { StopTraningCompoent } from './stop-traning.compoent';
 @Component({
   selector: 'app-current-traning',
   templateUrl: './current-traning.component.html',

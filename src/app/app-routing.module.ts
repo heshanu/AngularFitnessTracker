@@ -6,7 +6,8 @@ import { SignupComponent } from './comp/auth/signup/signup.component';
 import { TraningComponent } from './comp/traning/traning.component';
 
 const routes: Routes = [
-  {path:'',component:WelcomeComponent},
+  {path:'',component:LoginComponent},
+  {path:'welcome',component:WelcomeComponent},
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
   {path:'traning',component:TraningComponent},

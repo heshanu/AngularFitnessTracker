@@ -13,4 +13,7 @@ export class TraningComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /*reset-button*/
+  
+
 }

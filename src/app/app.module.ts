@@ -34,7 +34,7 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 import { HeaderComponent } from './shared/navigation/header/header.component';
 import { SidenavComponent } from './shared/navigation/sidenav/sidenav.component';
-import { StopTraningCompoent } from './comp/traning/stop-traning.compoent';
+import { StopTraningCompoent } from './comp/traning/current-traning/stop-traning.compoent';
 
 @NgModule({
   declarations: [
