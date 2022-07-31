@@ -1,6 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
+
+//confirmbox y or n
 @Component({
   selector: 'app-stop-traning',
   template: `<h1 mat-dialog-title>Are u sure?</h1>
