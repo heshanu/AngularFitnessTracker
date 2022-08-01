@@ -15,11 +15,13 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit, OnDestroy {
   @Output() sideNavToggle = new EventEmitter<void>();
   constructor(private authService: AuthService) {}
+
   ngOnDestroy(): void {
     throw new Error('Method not implemented.');
     this.authSubscription.unsubscribe();
   }
-  isAuth:boolean=false;
+
+  isAuth: boolean = false;
   authSubscription!: Subscription;
 
   ngOnInit(): void {
@@ -32,5 +34,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onToggleSideNav() {
     this.sideNavToggle.emit();
+  }
+
+  onLogOut(){
+    this.authService.logout();
   }
 }

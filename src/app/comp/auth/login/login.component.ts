@@ -32,8 +32,8 @@ export class LoginComponent implements OnInit {
   initForm(): void {
     this.loginForm = this.formBuilder.group({
       email: [''],
-      password: [''],
-      bdate: [''],
+      password: ['']
+
       //confirm:['']
       // email: [
       //   '',
