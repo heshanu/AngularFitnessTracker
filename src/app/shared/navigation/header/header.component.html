@@ -8,9 +8,10 @@
     <div>Logo</div>
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
       <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-        <a routerLink="/signup">SignUp</a>
-        <a routerLink="/login">Login</a>
-        <a routerLink="/traning">Traning</a>
+        <a *ngIf="!isAuth" routerLink="/signup">SignUp</a>
+        <a  *ngIf="!isAuth" routerLink="/login">Login</a>
+        <a  *ngIf="isAuth" routerLink="/traning">Traning</a>
+        <a  *ngIf="isAuth" routerLink="/traning">LogOut</a>
       </ul>
     </div>
   </mat-toolbar>

@@ -35,6 +35,7 @@ import { NavigationComponent } from './shared/navigation/navigation.component';
 import { HeaderComponent } from './shared/navigation/header/header.component';
 import { SidenavComponent } from './shared/navigation/sidenav/sidenav.component';
 import { StopTraningCompoent } from './comp/traning/current-traning/stop-traning.compoent';
+import { AuthService } from './comp/auth.service';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,7 @@ import { StopTraningCompoent } from './comp/traning/current-traning/stop-traning
     MatProgressSpinnerModule,
     MatDialogModule
   ],
-  providers: [MatDatepickerModule, MatNativeDateModule],
+  providers: [MatDatepickerModule, MatNativeDateModule,AuthService],
   bootstrap: [AppComponent],
   entryComponents:[StopTraningCompoent]
 })

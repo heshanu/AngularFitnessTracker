@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { stringToKeyValue } from '@angular/flex-layout/extended/style/style-transforms';
+import { AuthService } from '../../auth.service';
 import {
   FormBuilder,
   FormControl,
@@ -23,7 +24,7 @@ export class SignupComponent implements OnInit {
     return this.studentForm.controls;
   }
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder,private authService:AuthService ) {}
 
   maxDate!:Date;
 
@@ -54,6 +55,10 @@ export class SignupComponent implements OnInit {
     if (this.studentForm.valid) {
       this.isLoading = true;
       console.log(this.studentForm.value);
+      this.authService.registerUser({
+        email:this.studentForm.value.email,
+        password:this.studentForm.value.password
+      });
     }
   }
 
