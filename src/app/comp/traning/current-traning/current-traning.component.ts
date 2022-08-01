@@ -9,7 +9,7 @@ import { StopTraningCompoent } from './stop-traning.compoent';
   styleUrls: ['./current-traning.component.css'],
 })
 export class CurrentTraningComponent implements OnInit {
-  @Output() traningExit = new EventEmitter();
+  //@Output() traningExit = new EventEmitter();
   progress = 0;
   timer!: any;
 
@@ -32,8 +32,10 @@ export class CurrentTraningComponent implements OnInit {
     const step=this.trainingservice.getRunningExercise().duration/100*1000;
     this.timer = setInterval(() => {
       if (this.progress >= 100) {
+        this.trainingservice.completeExecrise();
         clearInterval(this.timer);
       }
+      this.router.navigate(['/traning']);
     },step);
   }
 
@@ -48,11 +50,10 @@ export class CurrentTraningComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(result);
       if (result) {
-        this.traningExit.emit();
+        this.trainingservice.cancelExecrise(this.progress);
       } else {
-        this.router.navigate(['/traning']);
 
-       // this.startOrResume();
+        this.startOrResume();
       }
     });
   }

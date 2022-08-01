@@ -1,7 +1,7 @@
 import { Excerise } from './exercise.model';
 import { Subject } from 'rxjs';
 export class TrainingService {
-  exerciseChange=new Subject<Excerise>();
+  exerciseChange = new Subject<Excerise | null>();
   private avaliableExercise: Excerise[] = [
     {
       id: 'crunches',
@@ -34,16 +34,38 @@ export class TrainingService {
     //get copy and didnt effect to array usign slice
   }
 
- private runningExercise!: Excerise;
-
+  private runningExercise!: Excerise;
+  private exercise: Excerise[] = [];
 
   startExercise(selectId: string) {
-    this.runningExercise==this.avaliableExercise.find((ex) => ex.id === selectId);
-    this.exerciseChange.next({...this.runningExercise});
+    this.runningExercise ==
+      this.avaliableExercise.find((ex) => ex.id === selectId);
+    this.exerciseChange.next({ ...this.runningExercise });
   }
 
-  getRunningExercise(){
-    return {...this.runningExercise};
+  getRunningExercise() {
+    return { ...this.runningExercise };
+  }
+
+  completeExecrise() {
+    this.exercise.push({
+      ...this.runningExercise,
+      date: new Date(),
+      state: 'completed',
+    });
+    this.runningExercise == null;
+    this.exerciseChange.next(null);
+  }
+
+  cancelExecrise(progress: number) {
+    this.exercise.push({
+      ...this.runningExercise,
+      duration: this.runningExercise.duration * (progress / 100),
+      calories: this.runningExercise.duration * (progress / 100),
+      date: new Date(),
+      state: 'cancelled',
+    });
+    this.runningExercise == null;
+    this.exerciseChange.next(null);
   }
 }
-

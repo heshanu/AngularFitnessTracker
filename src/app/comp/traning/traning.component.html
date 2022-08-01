@@ -8,9 +8,7 @@
 <mat-tab-group>
   <mat-tab
     label="Current Traning"
-    *ngIf="onGoingTraning"
-    (trainingExit)="onGoingTraning=false"
-  >
+    *ngIf="onGoingTraning">
     <app-current-traning></app-current-traning
   ></mat-tab>
 </mat-tab-group>

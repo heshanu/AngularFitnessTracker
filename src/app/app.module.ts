@@ -22,6 +22,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
 
 import { SignupComponent } from './comp/auth/signup/signup.component';
 import { LoginComponent } from './comp/auth/login/login.component';
@@ -78,7 +79,8 @@ import { TrainingService } from './comp/traning/traning.service';
     MatCardModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ],
   providers: [TrainingService,MatDatepickerModule, MatNativeDateModule,AuthService,AuthGuard],
   bootstrap: [AppComponent],
