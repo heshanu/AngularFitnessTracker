@@ -19,11 +19,8 @@
     <button mat-button type="submit" class="btn btn-primary" (click)="onStartTraning()">Start</button>
     <mat-form-field appearance="fill">
 
-      <mat-select disableRipple>
-        <mat-option value="crunches">crunches</mat-option>
-        <mat-option value="touch-toes">touch-toes</mat-option>
-        <mat-option value="side-lungs">side-lungs</mat-option>
-        <mat-option value="burpees">burpees</mat-option>
+      <mat-select disableRipple >
+        <mat-option *ngFor="let e of exerises" [value]="e.id">{{e.name}}</mat-option>
       </mat-select>
       <mat-label>Select an option</mat-label>
       <button type="submit" mat-button (click)="onStartTraning()"></button>

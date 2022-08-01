@@ -37,6 +37,7 @@ import { SidenavComponent } from './shared/navigation/sidenav/sidenav.component'
 import { StopTraningCompoent } from './comp/traning/current-traning/stop-traning.compoent';
 import { AuthService } from './comp/auth.service';
 import { AuthGuard } from './comp/auth/auth.guard';
+import { TrainingService } from './comp/traning/traning.service';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,7 @@ import { AuthGuard } from './comp/auth/auth.guard';
     MatProgressSpinnerModule,
     MatDialogModule
   ],
-  providers: [MatDatepickerModule, MatNativeDateModule,AuthService,AuthGuard],
+  providers: [TrainingService,MatDatepickerModule, MatNativeDateModule,AuthService,AuthGuard],
   bootstrap: [AppComponent],
   entryComponents:[StopTraningCompoent]
 })
