@@ -21,7 +21,22 @@ export class NewTrainingComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.exercises = this.db.collection("avaliableExercise").valueChanges();
+    this.exercises = this.db
+    .collection("avaliableExercise")
+    .valueChanges();
+
+/*
+    this.exercises=this.db.collection("avaliableExercise")
+    .snapshotChanges()
+    .map(docArray=>{
+      docArray.map(doc=>{
+        return {
+          id:doc.payload.doc.id,
+          ...doc.payload.doc.data()
+        }
+      })
+    })*/
+
   }
 
   onStartTraining(form: NgForm) {
