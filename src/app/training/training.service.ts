@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 
 import { Exercise } from './exercise.model';
 import { map } from 'rxjs/operators';
+import { DatePipe } from '@angular/common';
 
 @Injectable()
 export class TrainingService {
@@ -16,7 +17,9 @@ export class TrainingService {
   private runningExercise: Exercise;
   private fbSubs: Subscription[] = [];
 
+
   constructor(private db: AngularFirestore) {}
+
   fetchAvailableExercises() {
     this.fbSubs.push(this.db
       .collection('avaliableExercise')
@@ -40,7 +43,7 @@ export class TrainingService {
 /*
   fetchAvailableExercises() {
     this.fbSubs.push(this.db
-      .collection('availableExercises')
+      .collection('avaliableExercise')
       .snapshotChanges()
       .map(docArray => {
         return docArray.map(doc => {
@@ -81,7 +84,7 @@ export class TrainingService {
       ...this.runningExercise,
       duration: this.runningExercise.duration * (progress / 100),
       calories: this.runningExercise.calories * (progress / 100),
-      date: new Date(),
+      date:new Date(),
       state: 'cancelled'
     });
     this.runningExercise = null;

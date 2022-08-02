@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 
 import { Exercise } from '../exercise.model';
 import { TrainingService } from '../training.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-past-trainings',
@@ -15,6 +16,7 @@ export class PastTrainingsComponent implements OnInit, AfterViewInit, OnDestroy 
   dataSource = new MatTableDataSource<Exercise>();
   private exChangedSubscription: Subscription;
 
+  datePipeString : string;
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
@@ -24,6 +26,7 @@ export class PastTrainingsComponent implements OnInit, AfterViewInit, OnDestroy 
     this.exChangedSubscription = this.trainingService.finishedExercisesChanged.subscribe(
       (exercises: Exercise[]) => {
         this.dataSource.data = exercises;
+        //console.log();
       }
     );
     this.trainingService.fetchCompletedOrCancelledExercises();
