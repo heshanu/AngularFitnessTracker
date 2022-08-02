@@ -20,6 +20,7 @@ import {
   MatPaginatorModule
 } from '@angular/material';
 
+import { MAT_DATE_LOCALE } from '@angular/material/core'
 @NgModule({
   imports: [
     MatButtonModule,
