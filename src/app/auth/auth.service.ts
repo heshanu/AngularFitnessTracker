@@ -11,7 +11,7 @@ import { TrainingService } from '../training/training.service';
 export class AuthService {
   authChange = new Subject<boolean>();
   private isAuthenticated = false;
-
+ e:boolean=false;
   constructor(
     private router: Router,
     private afAuth: AngularFireAuth,
@@ -51,6 +51,7 @@ export class AuthService {
       })
       .catch(error => {
         console.log(error);
+        e:true;
       });
   }
 

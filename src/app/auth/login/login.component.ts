@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AuthService } from '../auth.service';
-
+import {e} from '../auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,6 +11,7 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
+  e1:boolean;
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
@@ -23,9 +24,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+
     this.authService.login({
       email: this.loginForm.value.email,
       password: this.loginForm.value.password
     });
+
+   console.log(this.e1);
   }
 }
