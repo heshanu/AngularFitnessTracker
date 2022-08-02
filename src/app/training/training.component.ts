@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
+import { UIService } from '../shared/ui.service';
 
 import { TrainingService } from './training.service';
 
