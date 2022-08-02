@@ -1,19 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
+import { UIService } from '../../shared/ui.service';
+import { Subscription, Unsubscribable } from 'rxjs';
 import { AuthService } from '../auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit,OnDestroy{
   loginForm: FormGroup;
+  isLoading=false;
+  private loadingSubs!:Subscription;
 
-  e1:boolean;
-  constructor(private authService: AuthService) {}
+
+  constructor(private authService: AuthService,private uiService:UIService) {}
+  ngOnDestroy(): void {
+    //throw new Error('Method not implemented.');
+    this.loadingSubs.unsubscribe();
+  }
+
 
   ngOnInit() {
+    this.loadingSubs=this.uiService.loadingStateChanged.subscribe(isLoading=>{
+      this.isLoading=isLoading
+    });
     this.loginForm = new FormGroup({
       email: new FormControl('', {
         validators: [Validators.required, Validators.email]
