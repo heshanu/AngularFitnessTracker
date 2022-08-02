@@ -1,89 +1,51 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//material themes
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-//compoentsMatNativeDateModule
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatRippleModule } from '@angular/material/core';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatListModule } from '@angular/material/list';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatCardModule } from '@angular/material/card';
-import { MatDialogModule } from '@angular/material/dialog';
-import {MatTableModule} from '@angular/material/table';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { SignupComponent } from './comp/auth/signup/signup.component';
-import { LoginComponent } from './comp/auth/login/login.component';
-import { TraningComponent } from './comp/traning/traning.component';
-import { CurrentTraningComponent } from './comp/traning/current-traning/current-traning.component';
-import { NewTraningComponent } from './comp/traning/new-traning/new-traning.component';
-import { PastTraningComponent } from './comp/traning/past-traning/past-traning.component';
-import { WelcomeComponent } from './comp/welcome/welcome.component';
-import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
-import { NavigationComponent } from './shared/navigation/navigation.component';
-import { HeaderComponent } from './shared/navigation/header/header.component';
-import { SidenavComponent } from './shared/navigation/sidenav/sidenav.component';
-import { StopTraningCompoent } from './comp/traning/current-traning/stop-traning.compoent';
-import { AuthService } from './comp/auth.service';
-import { AuthGuard } from './comp/auth/auth.guard';
-import { TrainingService } from './comp/traning/traning.service';
+import { AppComponent } from './app.component';
+import { MaterialModule } from './material.module';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { TrainingComponent } from './training/training.component';
+import { CurrentTrainingComponent } from './training/current-training/current-training.component';
+import { NewTrainingComponent } from './training/new-training/new-training.component';
+import { PastTrainingsComponent } from './training/past-trainings/past-trainings.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './navigation/header/header.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { StopTrainingComponent } from './training/current-training/stop-training.component';
+import { AuthService } from './auth/auth.service';
+import { TrainingService } from './training/training.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
-    TraningComponent,
-    CurrentTraningComponent,
-    NewTraningComponent,
-    PastTraningComponent,
+    TrainingComponent,
+    CurrentTrainingComponent,
+    NewTrainingComponent,
+    PastTrainingsComponent,
     WelcomeComponent,
-    NavigationComponent,
     HeaderComponent,
-    SidenavComponent,
-    StopTraningCompoent
+    SidenavListComponent,
+    StopTrainingComponent
   ],
-
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    MaterialModule,
+    AppRoutingModule,
+    FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatRippleModule,
-    MatCheckboxModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatListModule,
-    MatTabsModule,
-    MatCardModule,
-    MatSelectModule,
-    MatProgressSpinnerModule,
-    MatDialogModule,
-    MatTableModule
+    ReactiveFormsModule
   ],
-  providers: [TrainingService,MatDatepickerModule, MatNativeDateModule,AuthService,AuthGuard],
+  providers: [AuthService, TrainingService],
   bootstrap: [AppComponent],
-  entryComponents:[StopTraningCompoent]
+  entryComponents: [StopTrainingComponent]
 })
-export class AppModule {}
+export class AppModule { }
