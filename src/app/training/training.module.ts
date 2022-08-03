@@ -12,6 +12,7 @@ import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from "../../environments/environment";
 import { AngularFireModule } from "angularfire2";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
   declarations:[
@@ -22,15 +23,11 @@ import { AngularFireModule } from "angularfire2";
     StopTrainingComponent
   ],
   imports:[
-    CommonModule,
-    MaterialModule,
-    FlexLayoutModule,
-    FormsModule,
-    ReactiveFormsModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    SharedModule
   ],
   exports:[]
 })
