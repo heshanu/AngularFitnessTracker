@@ -18,11 +18,9 @@ import {
   MatTableModule,
   MatSortModule,
   MatPaginatorModule,
-  MatSnackBarModule,
-  MatProgressBarModule
+  MatSnackBarModule
 } from '@angular/material';
 
-import { MAT_DATE_LOCALE } from '@angular/material/core'
 @NgModule({
   imports: [
     MatButtonModule,
@@ -43,8 +41,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core'
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatSnackBarModule,
-    MatProgressBarModule
+    MatSnackBarModule
   ],
   exports: [
     MatButtonModule,
@@ -65,8 +62,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core'
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatSnackBarModule,
-    MatProgressBarModule
+    MatSnackBarModule
   ]
 })
 export class MaterialModule {}
