@@ -22,7 +22,7 @@ export class SignupComponent implements OnInit, OnDestroy {
       this.isLoading = isLoading;
     });
     this.maxDate = new Date();
-    this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
+    this.maxDate.setFullYear(this.maxDate.getFullYear()+ 5);
   }
 
   onSubmit(form: NgForm) {
